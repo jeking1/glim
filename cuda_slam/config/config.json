@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "description": "CUDA-accelerated SLAM system configuration",
+  "modules": {
+    "odometry": "config/config_odometry.json",
+    "preprocess": "config/config_preprocess.json",
+    "mapping": "config/config_mapping.json",
+    "loop_closure": "config/config_loop_closure.json",
+    "backend": "config/config_backend.json"
+  },
+  "system": {
+    "num_threads": 8,
+    "enable_timing": true,
+    "enable_profiling": false,
+    "log_level": "info",
+    "data_directory": "./data",
+    "output_directory": "./output"
+  },
+  "sensor": {
+    "type": "lidar",
+    "lidar": {
+      "num_scan_lines": 16,
+      "scan_period": 0.1,
+      "min_range": 0.5,
+      "max_range": 100.0,
+      "vertical_fov_deg": 30.0,
+      "horizontal_resolution_deg": 0.2
+    },
+    "imu": {
+      "enabled": true,
+      "accel_noise_density": 0.01,
+      "gyro_noise_density": 0.001,
+      "accel_random_walk": 0.001,
+      "gyro_random_walk": 0.0001,
+      "imu_rate_hz": 200.0
+    }
+  },
+  "visualization": {
+    "enabled": false,
+    "publish_tf": true,
+    "publish_scan": true,
+    "publish_map": true,
+    "frame_rate": 30
+  }
+}
