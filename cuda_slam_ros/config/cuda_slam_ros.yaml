@@ -1,0 +1,37 @@
+cuda_slam_ros:
+  ros__parameters:
+    odom_frame_id: "odom"
+    base_frame_id: "base_link"
+    publish_tf: true
+    imu_init_duration: 2.0
+
+    T_imu_lidar:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0
+
+    preprocess:
+      distance_near: 0.5
+      distance_far: 100.0
+      downsample_resolution: 0.2
+      num_threads: 4
+
+    odometry:
+      voxel_resolution: 1.0
+      voxelmap_levels: 3
+      voxelmap_scaling_factor: 2.0
+      smoother_lag: 5
+      max_num_keyframes: 50
+      keyframe_delta_trans: 1.0
+      keyframe_delta_rot: 0.2
+      num_threads: 4
+      imu_gravity: 9.80665
+      icp_max_correspondence_distance: 2.0
+      icp_max_iterations: 30
+      icp_transformation_epsilon: 1e-6
+      icp_euclidean_fitness_epsilon: 1e-6
+      covariance_num_neighbors: 20
+      covariance_max_distance: 2.0
