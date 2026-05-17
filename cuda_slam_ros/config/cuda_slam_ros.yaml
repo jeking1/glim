@@ -2,8 +2,22 @@ cuda_slam_ros:
   ros__parameters:
     odom_frame_id: "odom"
     base_frame_id: "base_link"
+    map_frame_id: "map"
     publish_tf: true
     imu_init_duration: 2.0
+
+    global_localization:
+      enabled: false
+      map_file: ""
+
+      voxelmap_levels: 3
+      voxel_resolution_base: 0.5
+      voxelmap_scaling_factor: 2.0
+      icp_max_iterations: 30
+      icp_max_correspondence_distance: 5.0
+      icp_transformation_epsilon: 1e-5
+      initial_pose_search_radius: 10.0
+      initial_pose_search_angular_range: 0.5
 
     T_imu_lidar:
       x: 0.0
